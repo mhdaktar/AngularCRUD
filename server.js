@@ -13,11 +13,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(express.static(path.join(__dirname, 'dist')));
-console.log(__dirname)
+
 app.use('/api', api);
 
 app.get('*', (req, res) => {
-  res.sendfile(path.join(__dirname, 'dist/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 //set port

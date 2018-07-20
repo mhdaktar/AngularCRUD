@@ -32,5 +32,20 @@ router.get('/all',function(req,res)
             });
 });
 
+router.get('/articles/:id',function(req,res){
+    console.log('Requesting a specific article');
+    article.findById(req.params.id)
+        .exec(function(err,article){
+            if(err)
+            {
+                console.log('Error getting the article');
+            }
+            else
+            {
+                res.json(article);
+            }
+        });
+});
+
 module.exports=router;
 

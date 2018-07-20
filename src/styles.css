@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color:#f1f1f1;
+    padding : 4em 0;
+    font-family:'Railway';
+}
+
+.article-container{
+    background:#fff;
+    border-left:10px solid #093f68;
+    padding: 2em 0;
+}
+
+.article-container p{
+    color:#737373;
+}
