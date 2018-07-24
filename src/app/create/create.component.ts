@@ -23,7 +23,6 @@ export class CreateComponent implements OnInit {
       .subscribe(res => this.articles = res);
 
     this.aR.params.subscribe((params) => {
-      console.log('params', params['id']);
       if (params['id']) {
         this._articleService.getArticle(params['id'])
           .subscribe(res => {
@@ -49,7 +48,7 @@ export class CreateComponent implements OnInit {
     if (typeof (articleid) !== 'undefined') {
       console.log('Entered in article update');
       article._id = articleid._id;
-      this._articleService.UpdateArticle(article, articleid._id)
+      this._articleService.UpdateArticle(article, article._id)
         .subscribe(updateArticle => {
           this.router.navigateByUrl('/');
         })
